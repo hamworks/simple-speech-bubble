@@ -9,11 +9,16 @@
     "editorStyle": "file:../../build/index.css",
     "style": "file:../../build/index.css",
     "attributes": {
-        "avatarId": {
+        "mediaId": {
             "type": "integer",
             "default": 0
         },
-        "avatarURL": {
+        "mediaCaption": {
+            "type": "string",
+            "default": "",
+            "selector": "figure figcaption"
+        },
+        "mediaURL": {
             "type": "string",
             "default": "",
             "selector": "figure img",
@@ -22,11 +27,29 @@
         "mediaPosition": {
             "type": "string",
             "default": "left"
+        },
+        "backgroundColor": {
+            "type": "string"
+        },
+        "customBackgroundColor": {
+            "type": "string"
+        },
+        "borderColor": {
+            "type": "string"
+        },
+        "customBorderColor": {
+            "type": "string"
+        },
+        "textColor": {
+            "type": "string"
+        },
+        "customTextColor": {
+            "type": "string"
         }
     },
     "supports": {
-        "html": false,
-        "reusable": false,
-        "customClassName": false
+        "color": {
+            "link": true
+        }
     }
 }
