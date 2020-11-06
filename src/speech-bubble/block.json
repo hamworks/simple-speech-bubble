@@ -1,0 +1,32 @@
+{
+    "name": "simple-speech-bubble/speech-bubble",
+    "title": "speech-bubble",
+    "icon": "format-chat",
+    "description": "speech-bubble",
+    "textdomain": "simple-speech-bubble",
+    "category": "common",
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:../../build/index.css",
+    "style": "file:../../build/index.css",
+    "attributes": {
+        "avatarId": {
+            "type": "integer",
+            "default": 0
+        },
+        "avatarURL": {
+            "type": "string",
+            "default": "",
+            "selector": "figure img",
+            "attribute": "src"
+        },
+        "mediaPosition": {
+            "type": "string",
+            "default": "left"
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "customClassName": false
+    }
+}

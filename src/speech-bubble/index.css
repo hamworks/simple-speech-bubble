@@ -1,0 +1,21 @@
+.wp-block-simple-speech-bubble-speech-bubble {
+	grid-template-columns: 50% 1fr;
+	display: grid;
+}
+
+.wp-block-simple-speech-bubble-speech-bubble.has-media-on-the-right {
+	grid-template-columns: 1fr 50%;
+}
+
+.wp-block-simple-speech-bubble-speech-bubble__media {
+	display: block;
+}
+
+.wp-block-simple-speech-bubble-speech-bubble__comment {
+	display: block;
+}
+
+
+.wp-block-simple-speech-bubble-speech-bubble.has-media-on-the-right .wp-block-simple-speech-bubble-speech-bubble__media {
+	order: 2;
+}

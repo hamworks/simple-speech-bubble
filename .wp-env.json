@@ -1,0 +1,12 @@
+{
+    "core": "WordPress/Wordpress#5.5.3",
+    "plugins": [
+        ".",
+        "https://downloads.wordpress.org/plugin/wordpress-importer.zip"
+    ],
+    "config": {
+        "WP_ENVIRONMENT_TYPE": "local"
+    },
+    "port": 6789,
+    "testsPort": 6780
+}

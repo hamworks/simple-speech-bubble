@@ -1,0 +1,19 @@
+{
+    "name": "hamworks/simple-speech-bubble",
+    "autoload": {
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "squizlabs/php_codesniffer": "*",
+        "wp-coding-standards/wpcs": "*"
+    },
+    "scripts": {
+        "format": "phpcbf --standard=./.phpcs.xml.dist --report-summary --report-source",
+        "lint": "phpcs --standard=./.phpcs.xml.dist",
+        "phpcs": "phpcs --standard=./.phpcs.xml.dist"
+    },
+    "require": {
+        "ext-json": "*"
+    }
+}
