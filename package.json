@@ -7,6 +7,7 @@
         "format-js": "wp-scripts format-js ./src",
         "lint-php": "./vendor/bin/phpcs --standard=./.phpcs.xml.dist",
         "lint-style": "wp-scripts lint-style",
+        "lint-style:fix": "wp-scripts lint-style --fix",
         "lint-js": "wp-scripts lint-js ./src",
         "lint-js:fix": "wp-scripts lint-js ./src --fix"
     },
