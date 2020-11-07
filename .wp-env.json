@@ -2,7 +2,8 @@
     "core": "WordPress/Wordpress#5.5.3",
     "plugins": [
         ".",
-        "https://downloads.wordpress.org/plugin/wordpress-importer.zip"
+        "https://downloads.wordpress.org/plugin/wordpress-importer.zip",
+        "https://downloads.wordpress.org/plugin/rich-text-extension.0.0.5.zip"
     ],
     "config": {
         "WP_ENVIRONMENT_TYPE": "local"
