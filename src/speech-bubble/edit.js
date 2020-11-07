@@ -59,15 +59,10 @@ const Edit = ( {
 		},
 	];
 
-	const newBlockProps = {
-		style: {
-			'--bubble-bg-color': backgroundColor.color,
-			'--bubble-bd-color': borderColor.color,
-			color: textColor.color,
-		},
-		className: classnames( className, {
-			[ `has-media-on-the-${ mediaPosition }` ]: mediaPosition,
-		} ),
+	const styleProps = {
+		'--bubble-bg-color': backgroundColor.color,
+		'--bubble-bd-color': borderColor.color,
+		color: textColor.color,
 	};
 
 	const commentClassName = classnames(
@@ -100,18 +95,29 @@ const Edit = ( {
 					colorSettings={ [
 						{
 							value: backgroundColor.color,
-							onChange: setBackgroundColor,
+							onChange: ( value ) => {
+								setBackgroundColor( value );
+								setAttributes( {
+									customBackgroundColor: value,
+								} );
+							},
 							label: __( 'Background color' ),
 						},
 						{
-							value: textColor.color,
-							onChange: setTextColor,
-							label: __( 'Text color' ),
+							value: borderColor.color,
+							onChange: ( value ) => {
+								setBorderColor( value );
+								setAttributes( { customBorderColor: value } );
+							},
+							label: __( 'Border color' ),
 						},
 						{
-							value: borderColor.color,
-							onChange: setBorderColor,
-							label: __( 'Border color' ),
+							value: textColor.color,
+							onChange: ( value ) => {
+								setTextColor( value );
+								setAttributes( { customTextColor: value } );
+							},
+							label: __( 'Text color' ),
 						},
 					] }
 				>
@@ -125,8 +131,10 @@ const Edit = ( {
 				</PanelColorSettings>
 			</InspectorControls>
 			<div
-				className={ newBlockProps.className }
-				style={ newBlockProps.style }
+				className={ classnames( className, {
+					[ `has-media-on-the-${ mediaPosition }` ]: mediaPosition,
+				} ) }
+				style={ styleProps }
 			>
 				<figure className="wp-block-simple-speech-bubble-speech-bubble__media">
 					{ media }
@@ -138,7 +146,7 @@ const Edit = ( {
 						}
 					/>
 				</figure>
-				<div className={ commentClassName }>
+				<div className={ commentClassName } style={ styleProps }>
 					<InnerBlocks
 						template={ [
 							[
