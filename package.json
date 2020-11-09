@@ -39,8 +39,8 @@
     },
     "scripts": {
         "env": "wp-env",
-        "start": "wp-scripts start",
-        "build": "NODE_ENV=production wp-scripts build",
+        "start": "wp-scripts start ./src/index.js ./src/script.js",
+        "build": "NODE_ENV=production wp-scripts build ./src/index.js ./src/script.js",
         "format-js": "wp-scripts format-js ./src",
         "lint-php": "./vendor/bin/phpcs --standard=./.phpcs.xml.dist",
         "lint-style": "wp-scripts lint-style",

@@ -6,6 +6,7 @@
     "textdomain": "simple-speech-bubble",
     "category": "common",
     "editorScript": "file:../../build/index.js",
+    "script": "file:../../build/script.js",
     "editorStyle": "file:../../build/index.css",
     "style": "file:../../build/index.css",
     "attributes": {
