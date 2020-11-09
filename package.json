@@ -26,8 +26,14 @@
         "@wordpress/eslint-plugin": "^7.1.0",
         "@wordpress/prettier-config": "^0.4.0",
         "@wordpress/scripts": "^12.2.0",
+        "cssnano": "^4.1.10",
         "husky": "^4.3.0",
         "lint-staged": "^10.3.0",
+        "postcss-import": "^12.0.1",
+        "postcss-import-resolver": "^2.0.0",
+        "postcss-omit-import-tilde": "^1.0.1",
+        "postcss-preset-env": "^6.7.0",
+        "postcss-pxtorem": "^5.1.1",
         "prettier": "npm:wp-prettier@2.0.5",
         "stylelint-config-wordpress": "^17.0.0"
     },
@@ -78,5 +84,4 @@
             "publish": false
         }
     }
-
 }
