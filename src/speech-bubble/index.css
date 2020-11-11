@@ -20,12 +20,14 @@
 
 .wp-block-simple-speech-bubble-speech-bubble__media {
 	width: 30%;
+	box-sizing: border-box;
 }
 
 .wp-block-simple-speech-bubble-speech-bubble__comment {
 	display: block;
 	position: relative;
 	padding: 20px;
+	box-sizing: border-box;
 	width: calc(70% - var(--bubble-arrow-size) - 10px);
 	background-color: var(--bubble-bg-color);
 	border: var(--bubble-bd-width) solid var(--bubble-bd-color);
