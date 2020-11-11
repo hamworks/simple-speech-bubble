@@ -18,7 +18,8 @@
     },
     "dependencies": {
         "@wordpress/icons": "^2.8.0",
-        "classnames": "^2.2.6"
+        "classnames": "^2.2.6",
+        "lodash": "^4.17.20"
     },
     "devDependencies": {
         "@wordpress/browserslist-config": "^2.7.0",

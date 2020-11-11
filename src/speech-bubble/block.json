@@ -25,6 +25,10 @@
             "selector": "figure img",
             "attribute": "src"
         },
+        "mediaSizeSlug": {
+            "type": "string",
+            "default": "full"
+        },
         "mediaPosition": {
             "type": "string",
             "default": "left"

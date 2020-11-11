@@ -9,6 +9,8 @@
 	justify-content: space-between;
 	display: flex;
 	width: 100%;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	flex-direction: row;
 	align-items: center;
 
@@ -19,7 +21,7 @@
 
 
 .wp-block-simple-speech-bubble-speech-bubble__media {
-	width: 30%;
+	max-width: 30%;
 	box-sizing: border-box;
 }
 
@@ -28,6 +30,7 @@
 	position: relative;
 	padding: 1em;
 	border-radius: 0.2em;
+	flex-grow: 1;
 	box-sizing: border-box;
 	width: calc(70% - var(--bubble-arrow-size) - 10px);
 	background-color: var(--bubble-bg-color);
@@ -65,7 +68,16 @@
 
 .wp-block-simple-speech-bubble-speech-bubble.has-media-on-the-left {
 
+	& .wp-block-simple-speech-bubble-speech-bubble__media {
+		text-align: left;
+		& img {
+			margin-right: auto;
+		}
+	}
+
 	& .wp-block-simple-speech-bubble-speech-bubble__comment {
+
+		margin-left: calc(var(--bubble-arrow-size) + 10px);
 
 		&::before,
 		&::after,
@@ -86,7 +98,16 @@
 
 .wp-block-simple-speech-bubble-speech-bubble.has-media-on-the-right {
 
+	& .wp-block-simple-speech-bubble-speech-bubble__media {
+		text-align: right;
+		& img {
+			margin-left: auto;
+		}
+	}
+
 	& .wp-block-simple-speech-bubble-speech-bubble__comment {
+
+		margin-right: calc(var(--bubble-arrow-size) + 10px);
 
 		&::before,
 		&::after,

@@ -11,12 +11,20 @@ import {
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 import { pullLeft, pullRight } from '@wordpress/icons';
+import { useSelect } from '@wordpress/data';
+import { get, filter, map, pick } from 'lodash';
 import { __ } from '@wordpress/i18n';
-import { ToolbarGroup } from '@wordpress/components';
+import { ToolbarGroup, PanelBody, SelectControl } from '@wordpress/components';
 
 const Edit = ( {
 	className,
-	attributes: { mediaId, mediaURL, mediaPosition, mediaCaption },
+	attributes: {
+		mediaId,
+		mediaURL,
+		mediaPosition,
+		mediaCaption,
+		mediaSizeSlug,
+	},
 	setAttributes,
 	backgroundColor,
 	setBackgroundColor,
@@ -24,13 +32,47 @@ const Edit = ( {
 	setBorderColor,
 	textColor,
 	setTextColor,
+	isSelected,
 } ) => {
+	const { imageSizes } = useSelect( ( select ) => {
+		const { getSettings } = select( 'core/block-editor' );
+		return pick( getSettings(), [ 'imageSizes' ] );
+	} );
+
+	const image = useSelect(
+		( select ) => {
+			const { getMedia } = select( 'core' );
+			return mediaId && isSelected ? getMedia( mediaId ) : null;
+		},
+		[ mediaId, isSelected ]
+	);
+
+	const imageSizeOptions = map(
+		filter( imageSizes, ( { slug } ) =>
+			get( image, [ 'media_details', 'sizes', slug, 'source_url' ] )
+		),
+		( { name, slug } ) => ( { value: slug, label: name } )
+	);
+
 	const onSelectMedia = ( props ) => {
 		const { id, url, caption, alt } = props;
 		setAttributes( {
 			mediaId: id,
 			mediaURL: url,
 			mediaCaption: caption || alt || '',
+		} );
+	};
+
+	const onChangeMediaSize = ( slug ) => {
+		const url = get( image, [
+			'media_details',
+			'sizes',
+			slug,
+			'source_url',
+		] );
+		setAttributes( {
+			mediaSizeSlug: slug,
+			mediaURL: url,
 		} );
 	};
 
@@ -90,6 +132,14 @@ const Edit = ( {
 				/>
 			</BlockControls>
 			<InspectorControls>
+				<PanelBody title={ __( 'Image settings' ) }>
+					<SelectControl
+						label={ __( 'Image size' ) }
+						value={ mediaSizeSlug }
+						options={ imageSizeOptions }
+						onChange={ onChangeMediaSize }
+					/>
+				</PanelBody>
 				<PanelColorSettings
 					title={ __( 'Color settings' ) }
 					colorSettings={ [
