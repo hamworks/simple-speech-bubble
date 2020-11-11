@@ -1,7 +1,7 @@
 :root {
 	--bubble-arrow-size: 15px;
-	--bubble-bg-color: #ddd;
-	--bubble-bd-color: #ccc;
+	--bubble-bg-color: #f2f2f2;
+	--bubble-bd-color: #ddd;
 	--bubble-bd-width: 2px;
 }
 
@@ -26,7 +26,8 @@
 .wp-block-simple-speech-bubble-speech-bubble__comment {
 	display: block;
 	position: relative;
-	padding: 20px;
+	padding: 1em;
+	border-radius: 0.2em;
 	box-sizing: border-box;
 	width: calc(70% - var(--bubble-arrow-size) - 10px);
 	background-color: var(--bubble-bg-color);
