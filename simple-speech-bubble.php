@@ -9,7 +9,7 @@
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     simple-speech-bubble
  * Domain Path:     /languages
- * Version: 0.0.3
+ * Version: 0.0.4
  */
 
 add_action(
